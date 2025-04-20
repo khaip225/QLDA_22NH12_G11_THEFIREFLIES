@@ -1,0 +1,47 @@
+2025-04-20 14:48:00,532 ERROR scheduler Exception in Enqueue Events for Site nutrition.local
+Traceback (most recent call last):
+  File "/workspaces/QLDA_22NH12_G11_THEFIREFLIES/frappe-nutrition/apps/frappe/frappe/utils/redis_wrapper.py", line 412, in _enable_client_tracking
+    conn.read_response()
+  File "/workspaces/QLDA_22NH12_G11_THEFIREFLIES/frappe-nutrition/env/lib/python3.12/site-packages/redis/connection.py", line 616, in read_response
+    raise response
+redis.exceptions.ResponseError: Unknown subcommand or wrong number of arguments for 'TRACKING'. Try CLIENT HELP
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspaces/QLDA_22NH12_G11_THEFIREFLIES/frappe-nutrition/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/QLDA_22NH12_G11_THEFIREFLIES/frappe-nutrition/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/QLDA_22NH12_G11_THEFIREFLIES/frappe-nutrition/apps/frappe/frappe/utils/scheduler.py", line 174, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/workspaces/QLDA_22NH12_G11_THEFIREFLIES/frappe-nutrition/apps/frappe/frappe/database/database.py", line 887, in get_single_value
+    df = frappe.get_meta(doctype).get_field(fieldname)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/QLDA_22NH12_G11_THEFIREFLIES/frappe-nutrition/apps/frappe/frappe/model/meta.py", line 81, in get_meta
+    and (meta := frappe.client_cache.get_value(f"doctype_meta::{doctype}"))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/QLDA_22NH12_G11_THEFIREFLIES/frappe-nutrition/apps/frappe/frappe/utils/redis_wrapper.py", line 515, in get_value
+    val = self.redis.get_value(key, shared=True, use_local_cache=not self.healthy)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/QLDA_22NH12_G11_THEFIREFLIES/frappe-nutrition/apps/frappe/frappe/utils/redis_wrapper.py", line 97, in get_value
+    val = self.get(key)
+          ^^^^^^^^^^^^^
+  File "/workspaces/QLDA_22NH12_G11_THEFIREFLIES/frappe-nutrition/env/lib/python3.12/site-packages/redis/commands/core.py", line 1822, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/QLDA_22NH12_G11_THEFIREFLIES/frappe-nutrition/env/lib/python3.12/site-packages/redis/client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/QLDA_22NH12_G11_THEFIREFLIES/frappe-nutrition/env/lib/python3.12/site-packages/redis/client.py", line 565, in _execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/QLDA_22NH12_G11_THEFIREFLIES/frappe-nutrition/env/lib/python3.12/site-packages/redis/connection.py", line 1422, in get_connection
+    connection.connect()
+  File "/workspaces/QLDA_22NH12_G11_THEFIREFLIES/frappe-nutrition/env/lib/python3.12/site-packages/redis/connection.py", line 385, in connect
+    callback(self)
+  File "/workspaces/QLDA_22NH12_G11_THEFIREFLIES/frappe-nutrition/apps/frappe/frappe/utils/redis_wrapper.py", line 418, in _enable_client_tracking
+    raise Exception("Redis version is not supported, upgrade to Redis 6.0 or higher.")
+Exception: Redis version is not supported, upgrade to Redis 6.0 or higher.

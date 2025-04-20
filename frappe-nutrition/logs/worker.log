@@ -1,0 +1,8 @@
+2025-04-20 14:47:20,882 Worker rq:worker:db9ade0378e24cabb3173b0345fe8360 started with PID 38864, version 2.3.2
+2025-04-20 14:47:20,885 Subscribing to channel rq:pubsub:db9ade0378e24cabb3173b0345fe8360
+2025-04-20 14:47:20,895 *** Listening on workspaces-QLDA_22NH12_G11_THEFIREFLIES-frappe-nutrition:short, workspaces-QLDA_22NH12_G11_THEFIREFLIES-frappe-nutrition:default, workspaces-QLDA_22NH12_G11_THEFIREFLIES-frappe-nutrition:long...
+2025-04-20 14:47:20,899 Cleaning registries for queue: workspaces-QLDA_22NH12_G11_THEFIREFLIES-frappe-nutrition:short
+2025-04-20 14:47:20,909 Cleaning registries for queue: workspaces-QLDA_22NH12_G11_THEFIREFLIES-frappe-nutrition:default
+2025-04-20 14:47:20,919 Cleaning registries for queue: workspaces-QLDA_22NH12_G11_THEFIREFLIES-frappe-nutrition:long
+2025-04-20 14:49:13,444 Worker db9ade0378e24cabb3173b0345fe8360 [PID 38864]: warm shut down requested
+2025-04-20 14:49:13,458 Unsubscribing from channel rq:pubsub:db9ade0378e24cabb3173b0345fe8360

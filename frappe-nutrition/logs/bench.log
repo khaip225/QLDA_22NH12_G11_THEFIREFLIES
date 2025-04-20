@@ -1,0 +1,31 @@
+2025-04-20 14:25:07,338 DEBUG cd frappe-nutrition && python3 -m venv env
+2025-04-20 14:25:10,828 DEBUG cd frappe-nutrition && /workspaces/QLDA_22NH12_G11_THEFIREFLIES/frappe-nutrition/env/bin/python -m pip install --quiet --upgrade pip
+2025-04-20 14:25:12,484 DEBUG cd frappe-nutrition && /workspaces/QLDA_22NH12_G11_THEFIREFLIES/frappe-nutrition/env/bin/python -m pip install --quiet wheel
+2025-04-20 14:25:13,181 LOG Getting frappe
+2025-04-20 14:25:13,181 DEBUG cd frappe-nutrition/apps && git clone https://github.com/frappe/frappe.git  --depth 1 --origin upstream
+2025-04-20 14:25:16,993 LOG Installing frappe
+2025-04-20 14:25:16,993 DEBUG cd /workspaces/QLDA_22NH12_G11_THEFIREFLIES/frappe-nutrition && /workspaces/QLDA_22NH12_G11_THEFIREFLIES/frappe-nutrition/env/bin/python -m pip install --quiet --upgrade -e /workspaces/QLDA_22NH12_G11_THEFIREFLIES/frappe-nutrition/apps/frappe 
+2025-04-20 14:25:56,182 DEBUG cd /workspaces/QLDA_22NH12_G11_THEFIREFLIES/frappe-nutrition/apps/frappe && yarn install --check-files
+2025-04-20 14:26:11,839 DEBUG cd frappe-nutrition && bench build
+2025-04-20 14:26:12,085 INFO /home/codespace/.python/current/bin/bench build
+2025-04-20 14:26:38,959 LOG setting up backups
+2025-04-20 14:26:38,981 LOG backups were set up
+2025-04-20 14:26:38,982 INFO Bench frappe-nutrition initialized
+2025-04-20 14:32:07,775 INFO /home/codespace/.python/current/bin/bench new-site nutrisite.localhost --no-mariadb-socket --admin-password 123
+2025-04-20 14:33:37,805 INFO /home/codespace/.python/current/bin/bench new-site nutrisite.localhost --mariadb-user-host-login-scope=% --admin-password 123
+2025-04-20 14:34:04,953 INFO /home/codespace/.python/current/bin/bench new-site nutrition.local
+2025-04-20 14:35:50,435 INFO /home/codespace/.python/current/bin/bench new-site nutrisite.localhost --no-mariadb-socket --admin-password 123
+2025-04-20 14:44:12,017 INFO /home/codespace/.python/current/bin/bench new-site nutrition.local
+2025-04-20 14:45:35,974 INFO /home/codespace/.python/current/bin/bench new-app nutrition
+2025-04-20 14:45:35,978 LOG creating new app nutrition
+2025-04-20 14:46:54,375 LOG Installing nutrition
+2025-04-20 14:46:54,375 DEBUG cd /workspaces/QLDA_22NH12_G11_THEFIREFLIES/frappe-nutrition && /workspaces/QLDA_22NH12_G11_THEFIREFLIES/frappe-nutrition/env/bin/python -m pip install --quiet --upgrade -e /workspaces/QLDA_22NH12_G11_THEFIREFLIES/frappe-nutrition/apps/nutrition 
+2025-04-20 14:46:56,148 DEBUG bench build --app nutrition
+2025-04-20 14:46:56,279 INFO /home/codespace/.python/current/bin/bench build --app nutrition
+2025-04-20 14:47:07,810 INFO /home/codespace/.python/current/bin/bench --site nutrition.local install-app nutrition
+2025-04-20 14:47:18,571 INFO /home/codespace/.python/current/bin/bench start
+2025-04-20 14:47:19,813 INFO /home/codespace/.python/current/bin/bench worker
+2025-04-20 14:47:19,890 INFO /home/codespace/.python/current/bin/bench schedule
+2025-04-20 14:47:20,018 INFO /home/codespace/.python/current/bin/bench serve --port 8000
+2025-04-20 14:47:20,022 INFO /home/codespace/.python/current/bin/bench watch
+2025-04-20 14:49:39,644 INFO /home/codespace/.python/current/bin/bench --site nutrition.local serve
